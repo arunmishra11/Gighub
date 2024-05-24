@@ -1,16 +1,9 @@
-// const Sequelize = require('sequelize');
-// const db = require('')
-
-// const Gig = 
-
-// ? Here is where we set up our Dish model, for when we are ready to connect to a database in future activities.
-
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Dish extends Model {}
+class Gig extends Model {}
 
-Dish.init(
+Gig.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -18,28 +11,40 @@ Dish.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    dish_name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    technologies: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     description: {
       type: DataTypes.TEXT,
-      allowNull: true,
+      allowNull: false,
     },
-    guest_name: {
+    budget: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    has_nuts: {
-      type: DataTypes.BOOLEAN,
+    contact_email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isEmail: true,
+      },
     },
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'dish',
+    modelName: 'gig',
   }
 );
 
-module.exports = Dish;
+Gig.sync().then(() => {
+  console.log('table created');
+});
+
+module.exports = Gig;
