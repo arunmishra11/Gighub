@@ -1,7 +1,26 @@
 // const Sequelize = require('sequelize');
 // const db = require('')
 
-// const Gig = 
+module.exports = (sequelize, DataTypes) => {
+  const Gig = sequelize.define('Gig', {
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Users',
+        key: 'id',
+      },
+    },
+  });
+  return Gig;
+};
 
 // ? Here is where we set up our Dish model, for when we are ready to connect to a database in future activities.
 

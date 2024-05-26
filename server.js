@@ -5,10 +5,12 @@ const session = require('express-session'); // Import express session for managi
 const exphbs = require('express-handlebars'); // Import express handlebars to use Handlebars as templating engine
 const routes = require('./controllers'); // Import routes from controllers directory
 const helpers = require('./utils/helpers'); // Import helper function file from utils folder
-
+const dotenv = require('dotenv');
+const db = require('./models');
 const sequelize = require('./config/connection'); // Import the Sequelize instance for database connection configuration
 const SequelizeStore = require('connect-session-sequelize')(session.Store); // Import the Sequelize store for session storage
 
+dotenv.config();
 
 const app = express(); // Set up express application
 const PORT = process.env.PORT || 3001; // Define the port the server will listen on
@@ -26,7 +28,7 @@ const sess = {
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
-        db: sequelize,
+        db: db.sequelize,
     })
 };
 app.use(session(sess)); // Use the session middleware with the configuration set to sess. This sets up session management for the express application.
@@ -46,6 +48,6 @@ app.get('/gigPost', (req, res) => res.render('gigPost'));
 
 // Sync the sequelize models with the database
 // force: false ensures that existing tables are not dropped and recreated, preserving data
-sequelize.sync({ force: false }).then(() => {
+db.sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () =>  console.log(`Server listening on: http://localhost: ${PORT}`)) // Start the server and listen on specified port
 })
