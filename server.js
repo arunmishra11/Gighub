@@ -43,6 +43,7 @@ app.get('/', (req, res) => res.render('index')); // Setting the home page
 // app.get('/landing', (req, res) => res.render('landing')); // Setting the home page
 app.get('/gigDisplay', (req, res) => res.render('gigDisplay')); // Setting the home page
 app.get('/gigPost', (req, res) => res.render('gigPost'));
+app.get('/gigRepo', (req,res) => res.render('gigRepo'));
 
 // Sync the sequelize models with the database
 // force: false ensures that existing tables are not dropped and recreated, preserving data
