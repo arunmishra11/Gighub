@@ -1,4 +1,4 @@
-const db = require('../models');
+const db = require("../../../models");
 
 exports.getAllGigs = async (req, res) => {
   try {
@@ -12,7 +12,11 @@ exports.getAllGigs = async (req, res) => {
 exports.createGig = async (req, res) => {
   try {
     const { title, description } = req.body;
-    const gig = await db.Gig.create({ title, description, userId: req.session.userId });
+    const gig = await db.Gig.create({
+      title,
+      description,
+      userId: req.session.userId,
+    });
     res.status(201).json(gig);
   } catch (err) {
     res.status(500).json({ error: err.message });
