@@ -1,5 +1,10 @@
 const Sequelize = require('sequelize');
 const dotenv = require('dotenv');
+// models/index.js
+const Gig = require('./gig');
+
+db.Gig = new Gig(sequelize, Sequelize);
+
 
 dotenv.config();
 
