@@ -1,4 +1,7 @@
-const db = require("../../../models");
+const router = require('express').Router();
+const { User, Gig } = require('../../models');
+
+const db = require("../models");
 
 exports.getAllGigs = async (req, res) => {
   try {

@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-
+// --- > /api/users/ 
+// Creating a session
 router.post('/', async (req, res) => {
  try {
    const userData = await User.create(req.body);
@@ -19,7 +20,7 @@ router.post('/', async (req, res) => {
  }
 });
 
-
+// Path for login
 router.post('/login', async (req, res) => {
  try {
     const userData = await User.findOne({ where: { email: req.body.email } });
