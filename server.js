@@ -5,8 +5,7 @@ const session = require('express-session'); // Import express session for managi
 const exphbs = require('express-handlebars'); // Import express handlebars to use Handlebars as templating engine
 const routes = require('./controllers'); // Import routes from controllers directory
 const helpers = require('./utils/helpers'); // Import helper function file from utils folder
-const dotenv = require('dotenv');
-const db = require('./models');
+const dotenv = require('dotenv'); 
 const sequelize = require('./config/connection'); // Import the Sequelize instance for database connection configuration
 const SequelizeStore = require('connect-session-sequelize')(session.Store); // Import the Sequelize store for session storage
 
@@ -28,7 +27,7 @@ const sess = {
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
-        db: db.sequelize,
+        db: sequelize,
     })
 };
 app.use(session(sess)); // Use the session middleware with the configuration set to sess. This sets up session management for the express application.
@@ -41,13 +40,10 @@ app.use(express.urlencoded({ extended: true })) // Middleware to parse URL-encod
 app.use(express.static(path.join(__dirname, 'public'))); //Middleware to serve static files from the 'public' directory
 app.use(routes); // Set the routes object for various endpoints in the application
 
-app.get('/', (req, res) => res.render('index')); // Setting the home page
-app.get('/landing', (req, res) => res.render('landing')); // Setting the home page
-app.get('/gigDisplay', (req, res) => res.render('gigDisplay')); // Setting the home page
-app.get('/gigPost', (req, res) => res.render('gigPost'));
+
 
 // Sync the sequelize models with the database
 // force: false ensures that existing tables are not dropped and recreated, preserving data
-db.sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () =>  console.log(`Server listening on: http://localhost: ${PORT}`)) // Start the server and listen on specified port
 })
