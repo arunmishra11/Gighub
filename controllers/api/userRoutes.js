@@ -20,7 +20,8 @@ router.post('/', async (req, res) => {
  }
 });
 
-// Path for login
+// Path for login for users
+// -- > /api/users/login
 router.post('/login', async (req, res) => {
  try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -58,7 +59,7 @@ router.post('/login', async (req, res) => {
   }
  });
  
- 
+ // --> api/users/logout
  router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {

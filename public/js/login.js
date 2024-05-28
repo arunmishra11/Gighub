@@ -3,10 +3,10 @@ const db = require('../models');
 
 exports.signup = async (req, res) => {
   try {
-    const { username, email, password } = req.body;
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const user = await db.User.create({ username, email, password: hashedPassword });
-    req.session.userId = user.id;
+    // const { username, email, password } = req.body;
+    // const hashedPassword = await bcrypt.hash(password, 10);
+    // const user = await db.User.create({ username, email, password: hashedPassword });
+    // req.session.userId = user.id;
     res.status(201).redirect('/dashboard');
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -35,3 +35,4 @@ exports.logout = (req, res) => {
     res.redirect('/');
   });
 };
+
