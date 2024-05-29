@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => res.render('index')); // Setting the home page
 
-
+// Render full list of gigs on gigRepo
 router.get('/gigRepo', async (req, res) => { 
     try {
         // Get all projects and JOIN with user data
@@ -23,8 +23,33 @@ router.get('/gigRepo', async (req, res) => {
       } catch (err) {
         res.status(500).json(err)}; // Setting the home page
 })
+
+// Search db for gig and render to gigPost
+router.get('/gig/:id', async (req, res) => {
+    try {
+      const projectData = await Project.findByPk(req.params.id, {
+        include: [
+          {
+            model: User,
+            attributes: ['name'],
+          },
+        ],
+      });
+  
+      const project = projectData.get({ plain: true });
+  
+      res.render('project', {
+        ...project,
+        logged_in: req.session.logged_in
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
+
+// Render gigPost page for creating a new gig
 router.get('/gigPost', (req, res) => res.render('gigPost'));
-// router.get('/gigRepo', (req,res) => res.render('gigRepo'));
 
 
 module.exports = router;

@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { User, Gig } = require('../../models');
 
-
-router.get('/', async (req, res) => {
+// Authentification and rendering gigRepo
+router.post('/gigRepo', async (req, res) => {
   try {
     const gigs = await Gig.findAll({ include: User });
     res.json(gigs);
@@ -11,10 +11,11 @@ router.get('/', async (req, res) => {
   }
 });
 
-exports.createGig = async (req, res) => {
+// Create a post on gigPost
+router.post('/gigPost', async (req, res) => {
   try {
-    const { title, description } = req.body;
-    const gig = await Gig.create({
+    
+    const gig = await Gig.findByPk({
       title,
       description,
       userId: req.session.userId,
@@ -23,6 +24,10 @@ exports.createGig = async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
-};
+});
+
+// router.get('/gigPost', (req, res) => res.render('gigPost'));
+
+
 
 module.exports = router;
