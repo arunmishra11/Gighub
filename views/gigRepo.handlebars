@@ -13,7 +13,7 @@
       <!-- row 1 -->
       {{#each gigs as |gig|}}
         <tr>
-          <th>{{ gig.title }}</th>
+          <th><a href="/gig/{{gig.id}}">{{ gig.title }}</a></th>
           <td>{{ gig.technologies }}</td>
           <td>{{ gig.description }}</td>
           <td>{{ gig.budget }}</td>

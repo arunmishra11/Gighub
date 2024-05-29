@@ -4,7 +4,6 @@ const path = require('path'); // Import path to work with files and directory pa
 const session = require('express-session'); // Import express session for managing sessions and storing sessions in cookies
 const exphbs = require('express-handlebars'); // Import express handlebars to use Handlebars as templating engine
 const routes = require('./controllers'); // Import routes from controllers directory
-const helpers = require('./utils/helpers'); // Import helper function file from utils folder
 const dotenv = require('dotenv'); 
 const sequelize = require('./config/connection'); // Import the Sequelize instance for database connection configuration
 const SequelizeStore = require('connect-session-sequelize')(session.Store); // Import the Sequelize store for session storage
@@ -14,7 +13,7 @@ dotenv.config();
 const app = express(); // Set up express application
 const PORT = process.env.PORT || 3001; // Define the port the server will listen on
 
-const hbs = exphbs.create({helpers}); // Set up handbars engine, passing in the helpers function
+const hbs = exphbs.create(); // Set up handbars engine, passing in the helpers function
 
 // Define a session configuration object named 'sess'
 const sess = {

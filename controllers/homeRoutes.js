@@ -27,7 +27,7 @@ router.get('/gigRepo', async (req, res) => {
 // Search db for gig and render to gigPost
 router.get('/gig/:id', async (req, res) => {
     try {
-      const projectData = await Project.findByPk(req.params.id, {
+      const gigsData = await Gig.findByPk(req.params.id, {
         include: [
           {
             model: User,
@@ -36,11 +36,11 @@ router.get('/gig/:id', async (req, res) => {
         ],
       });
   
-      const project = projectData.get({ plain: true });
+      const gig = gigsData.get({ plain: true });
   
-      res.render('project', {
-        ...project,
-        logged_in: req.session.logged_in
+      res.render('gigDisplay', {
+        ...gig,
+        // logged_in: req.session.logged_in
       });
     } catch (err) {
       res.status(500).json(err);
