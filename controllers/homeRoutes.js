@@ -52,4 +52,8 @@ router.get('/gig/:id', async (req, res) => {
 router.get('/gigPost', (req, res) => res.render('gigPost'));
 
 
+// Render individual gig
+router.get('/gigDisplay', (req, res) => res.render('gigDisplay'));
+
+
 module.exports = router;
