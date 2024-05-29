@@ -10,7 +10,6 @@ router.get('/gigRepo', async (req, res) => {
     try {
         // Get all projects and JOIN with user data
         const gigData = await Gig.findAll();
-        console.log('hello')
         // Serialize data so the template can read it
         const gigs = gigData.map((gig) => gig.get({ plain: true }));
         console.log(req.session);
@@ -27,7 +26,7 @@ router.get('/gigRepo', async (req, res) => {
 // Search db for gig and render to gigPost
 router.get('/gig/:id', async (req, res) => {
     try {
-      const projectData = await Project.findByPk(req.params.id, {
+      const gigsData = await Gig.findByPk(req.params.id, {
         include: [
           {
             model: User,
@@ -36,11 +35,11 @@ router.get('/gig/:id', async (req, res) => {
         ],
       });
   
-      const project = projectData.get({ plain: true });
+      const gig = gigsData.get({ plain: true });
   
-      res.render('project', {
-        ...project,
-        logged_in: req.session.logged_in
+      res.render('gigDisplay', {
+        ...gig,
+        // logged_in: req.session.logged_in
       });
     } catch (err) {
       res.status(500).json(err);
@@ -50,6 +49,13 @@ router.get('/gig/:id', async (req, res) => {
 
 // Render gigPost page for creating a new gig
 router.get('/gigPost', (req, res) => res.render('gigPost'));
+
+
+// Render individual gig
+router.get('/gigDisplay', (req, res) => res.render('gigDisplay'));
+
+// Render login/signup page
+router.get('/loginSignup', (req, res) => res.render('loginSignup'));
 
 
 module.exports = router;

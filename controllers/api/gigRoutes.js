@@ -15,10 +15,10 @@ router.post('/gigRepo', async (req, res) => {
 router.post('/gigPost', async (req, res) => {
   try {
     
-    const gig = await Gig.findByPk({
-      title,
-      description,
-      userId: req.session.userId,
+    const gig = await Gig.create({
+      title: req.body.title,
+      description: req.body.description,
+      user_id: req.session.user_id,
     });
     res.status(201).json(gig);
   } catch (err) {

@@ -3,38 +3,22 @@
     <!-- head -->
     <thead>
       <tr>
-        <th></th>
-        <th>Name</th>
+        <th>Company</th>
         <th>Job</th>
-        <th>Favorite Color</th>
+        <th>Technologies</th>
+        <th>Salary</th>
       </tr>
     </thead>
     <tbody>
-      <!-- row 1 -->
-      <tr>
-        <th>1</th>
-        <td>Cy Ganderton</td>
-        <td>Quality Control Specialist</td>
-        <td>Blue</td>
-      </tr>
-      <!-- row 2 -->
-      <tr>
-        <th>2</th>
-        <td>Hart Hagerty</td>
-        <td>Desktop Support Technician</td>
-        <td>Purple</td>
-      </tr>
-      <!-- row 3 -->
-      <tr>
-        <th>3</th>
-        <td>Brice Swyre</td>
-        <td>Tax Accountant</td>
-        <td>Red</td>
-      </tr>
+      <!-- Render the gigs in list format -->
+      {{#each gigs as |gig|}}
+        <tr>
+          <th><a href="/gig/{{gig.id}}">{{ gig.company }}</a></th> {{!-- Import company name and link to gig page with id --}}
+          <th><a href="/gig/{{gig.id}}">{{ gig.title }}</a></th> {{!-- Import gig title and link to gig page with id --}}
+          <td>{{ gig.technologies }}</td>
+           <td>{{ gig.budget }}</td>
+        </tr>
+      {{/each}}
     </tbody>
   </table>
-
-  {{#each gigs as |gig| }}
-{{gig.title}}
-{{/each}}
 </div>

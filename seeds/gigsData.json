@@ -1,0 +1,48 @@
+[
+    {
+      "user_id": "1",
+      "company": "BlueOcean Digital",
+      "title": "API Developer",
+      "technologies": "JavaScript, Node, Express.js, REST, Insomnia, SQL, ",
+      "description": "BlueOcean Digital, a leading web development company, is dedicated to delivering innovative solutions and seemless APIs to our customers. We are looking for an experienced API Developer to join our dynamic and growing team. The ideal candidate will design, develop, and maintain robust and scalable APIs, ensuring their performance, quality, and responsiveness. Responsibilities include collaborating with front-end developers, writing clean and efficient code, implementing automated tests, optimizing API performance, troubleshooting issues, staying updated with emerging trends, participating in code reviews, and documenting API processes. If you are enthusiastic about developing high-performance APIs in a collaborative environment, we would love to hear from you.",
+      "budget": "100,000",
+      "contact_email": "ex@example.com"
+    },
+    {
+        "user_id": "2",
+        "company": "Quantum Webcraft",
+        "title": "Database Developer",
+        "technologies": "MongoDB, AWS, Docker",
+        "description": "This is a test.",
+        "budget": "1,000",
+        "contact_email": "ex@example.com"
+    },
+    {
+        "user_id": "3",
+        "company": "SEO Solutions",
+        "title": "SEO Specialist",
+        "technologies": "HTML, CSS, JavaScript, SQL, RegEx, Google Analytics",
+        "description": "This is a description",
+        "budget": "1,000",
+        "contact_email": "ex@example.com"
+    },
+    {
+        "user_id": "4",
+        "company": "AlphaCrypt ",
+        "title": "Web Security Specialist",
+        "technologies": "Python, AWS WAF, Cryptography, Cloud Security",
+        "description": "This is a test.",
+        "budget": "1,000",
+        "contact_email": "ex@example.com"
+    },
+    {
+        "user_id": "5",
+        "company": "PixelPerfect",
+        "title": "UI Developer",
+        "technologies": "HTML, CSS, JavaScript, React, Bootstrap",
+        "description": "This is a description",
+        "budget": "1,000",
+        "contact_email": "ex@example.com"
+    }
+  ]
+  
