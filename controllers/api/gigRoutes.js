@@ -1,21 +1,20 @@
 const router = require('express').Router();
 const { User, Gig } = require('../../models');
 
-const db = require("../models");
 
-exports.getAllGigs = async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const gigs = await db.Gig.findAll({ include: db.User });
+    const gigs = await Gig.findAll({ include: User });
     res.json(gigs);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
-};
+});
 
 exports.createGig = async (req, res) => {
   try {
     const { title, description } = req.body;
-    const gig = await db.Gig.create({
+    const gig = await Gig.create({
       title,
       description,
       userId: req.session.userId,
@@ -25,3 +24,5 @@ exports.createGig = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+module.exports = router;

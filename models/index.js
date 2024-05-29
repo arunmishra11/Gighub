@@ -6,12 +6,12 @@ const User = require('./user');
 
 // Define model associations
 User.hasMany(Gig, {
-   foreignKey: 'userId',
+   foreignKey: 'user_id',
   onDelete: 'CASCADE' 
 });
 
 
 Gig.belongsTo(User, {
-   foreignKey: 'userId' });
+   foreignKey: 'user_id' });
 
 module.exports = { User, Gig };
