@@ -13,7 +13,7 @@
         "company": "Quantum Webcraft",
         "title": "Database Developer",
         "technologies": "MongoDB, AWS, Docker",
-        "description": "password12345",
+        "description": "This is a test.",
         "budget": "1,000",
         "contact_email": "ex@example.com"
     },
@@ -22,7 +22,7 @@
         "company": "SEO Solutions",
         "title": "SEO Specialist",
         "technologies": "HTML, CSS, JavaScript, SQL, RegEx, Google Analytics",
-        "description": "password12345",
+        "description": "This is a description",
         "budget": "1,000",
         "contact_email": "ex@example.com"
     },
@@ -31,7 +31,7 @@
         "company": "AlphaCrypt ",
         "title": "Web Security Specialist",
         "technologies": "Python, AWS WAF, Cryptography, Cloud Security",
-        "description": "password12345",
+        "description": "This is a test.",
         "budget": "1,000",
         "contact_email": "ex@example.com"
     },
@@ -40,7 +40,7 @@
         "company": "PixelPerfect",
         "title": "UI Developer",
         "technologies": "HTML, CSS, JavaScript, React, Bootstrap",
-        "description": "password12345",
+        "description": "This is a description",
         "budget": "1,000",
         "contact_email": "ex@example.com"
     }
