@@ -13,8 +13,8 @@
       <!-- Render the gigs in list format -->
       {{#each gigs as |gig|}}
         <tr>
-          <th><a href="/gig/{{gig.id}}">{{ gig.company }}</a></th>
-          <th><a href="/gig/{{gig.id}}">{{ gig.title }}</a></th> 
+          <th><a href="/gig/{{gig.id}}">{{ gig.company }}</a></th> {{!-- Import company name and link to gig page with id --}}
+          <th><a href="/gig/{{gig.id}}">{{ gig.title }}</a></th> {{!-- Import gig title and link to gig page with id --}}
           <td>{{ gig.technologies }}</td>
            <td>{{ gig.budget }}</td>
         </tr>

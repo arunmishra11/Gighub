@@ -54,5 +54,8 @@ router.get('/gigPost', (req, res) => res.render('gigPost'));
 // Render individual gig
 router.get('/gigDisplay', (req, res) => res.render('gigDisplay'));
 
+// Render login/signup page
+router.get('/loginSignup', (req, res) => res.render('loginSignup'));
+
 
 module.exports = router;
