@@ -1,40 +1,45 @@
 [
     {
       "user_id": "1",
-      "title": "Sal",
-      "technologies": "sal@hotmail.com",
-      "description": "password12345",
-      "budget": "1,000",
+      "company": "BlueOcean Digital",
+      "title": "API Developer",
+      "technologies": "JavaScript, Node, Express.js, REST, Insomnia, SQL, ",
+      "description": "[Company Name], a leading [industry] company, is dedicated to delivering innovative solutions and services to our customers. We are looking for an experienced API Developer to join our dynamic and growing team. The ideal candidate will design, develop, and maintain robust and scalable APIs, ensuring their performance, quality, and responsiveness. Responsibilities include collaborating with front-end developers, writing clean and efficient code, implementing automated tests, optimizing API performance, troubleshooting issues, staying updated with emerging trends, participating in code reviews, and documenting API processes. If you are enthusiastic about developing high-performance APIs in a collaborative environment, we would love to hear from you.",
+      "budget": "100,000",
       "contact_email": "ex@example.com"
     },
     {
         "user_id": "2",
-        "title": "Sal",
-        "technologies": "sal@hotmail.com",
+        "company": "Quantum Webcraft",
+        "title": "Database Developer",
+        "technologies": "MongoDB, AWS, Docker",
         "description": "password12345",
         "budget": "1,000",
         "contact_email": "ex@example.com"
     },
     {
         "user_id": "3",
-        "title": "Sal",
-        "technologies": "sal@hotmail.com",
+        "company": "SEO Solutions",
+        "title": "SEO Specialist",
+        "technologies": "HTML, CSS, JavaScript, SQL, RegEx, Google Analytics",
         "description": "password12345",
         "budget": "1,000",
         "contact_email": "ex@example.com"
     },
     {
         "user_id": "4",
-        "title": "Sal",
-        "technologies": "sal@hotmail.com",
+        "company": "AlphaCrypt ",
+        "title": "Web Security Specialist",
+        "technologies": "Python, AWS WAF, Cryptography, Cloud Security",
         "description": "password12345",
         "budget": "1,000",
         "contact_email": "ex@example.com"
     },
     {
         "user_id": "5",
-        "title": "Sal",
-        "technologies": "sal@hotmail.com",
+        "company": "PixelPerfect",
+        "title": "UI Developer",
+        "technologies": "HTML, CSS, JavaScript, React, Bootstrap",
         "description": "password12345",
         "budget": "1,000",
         "contact_email": "ex@example.com"

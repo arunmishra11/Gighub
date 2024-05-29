@@ -11,6 +11,10 @@ Gig.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    company: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     title: {
       type: DataTypes.STRING,
       allowNull: false,

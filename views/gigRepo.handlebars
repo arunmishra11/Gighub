@@ -3,21 +3,20 @@
     <!-- head -->
     <thead>
       <tr>
-        <th></th>
-        <th>Name</th>
+        <th>Company</th>
         <th>Job</th>
-        <th>Favorite Color</th>
+        <th>Technologies</th>
+        <th>Salary</th>
       </tr>
     </thead>
     <tbody>
-      <!-- row 1 -->
+      <!-- Render the gigs in list format -->
       {{#each gigs as |gig|}}
         <tr>
-          <th><a href="/gig/{{gig.id}}">{{ gig.title }}</a></th>
+          <th><a href="/gig/{{gig.id}}">{{ gig.company }}</a></th>
+          <th><a href="/gig/{{gig.id}}">{{ gig.title }}</a></th> 
           <td>{{ gig.technologies }}</td>
-          <td>{{ gig.description }}</td>
-          <td>{{ gig.budget }}</td>
-          <td> {{ gig.contact_email }} </td>
+           <td>{{ gig.budget }}</td>
         </tr>
       {{/each}}
     </tbody>
