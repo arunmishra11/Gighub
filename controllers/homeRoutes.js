@@ -10,7 +10,6 @@ router.get('/gigRepo', async (req, res) => {
     try {
         // Get all projects and JOIN with user data
         const gigData = await Gig.findAll();
-        console.log('hello')
         // Serialize data so the template can read it
         const gigs = gigData.map((gig) => gig.get({ plain: true }));
         console.log(req.session);
