@@ -27,3 +27,29 @@
     </dl>
   </div>
 </div>
+
+
+
+<div class="overflow-x-auto">
+  <table class="table table-zebra">
+    <!-- head -->
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Job</th>
+        <th>Technologies</th>
+        <th>Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Render the gigs in list format -->
+
+        <tr>
+          <th><a href="/gig/{{gig.id}}">{{ gig.company }}</a></th> {{!-- Import company name and link to gig page with id --}}
+          <th><a href="/gig/{{gig.id}}">{{ gig.title }}</a></th> {{!-- Import gig title and link to gig page with id --}}
+          <td>{{ gig.technologies }}</td>
+           <td>{{ gig.budget }}</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
