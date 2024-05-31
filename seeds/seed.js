@@ -5,7 +5,8 @@ const gigData = require('./gigsData.json')
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
-
+  await User.destroy({where: {}})
+  await Gig.destroy({where: {}})
   await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
