@@ -1,24 +1,26 @@
-<div class="overflow-x-auto">
-  <table class="table table-zebra">
-    <!-- head -->
-    <thead>
-      <tr>
-        <th>Company</th>
-        <th>Job</th>
-        <th>Technologies</th>
-        <th>Salary</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Render the gigs in list format -->
-      {{#each gigs as |gig|}}
-        <tr>
-          <th><a href="/gig/{{gig.id}}">{{ gig.company }}</a></th> {{!-- Import company name and link to gig page with id --}}
-          <th><a href="/gig/{{gig.id}}">{{ gig.title }}</a></th> {{!-- Import gig title and link to gig page with id --}}
-          <td>{{ gig.technologies }}</td>
-           <td>{{ gig.budget }}</td>
-        </tr>
-      {{/each}}
-    </tbody>
-  </table>
+<!-- Add a background color to the entire page -->
+<div class="min-h-screen bg-gray-700 flex items-center justify-center p-8">
+  <!-- Render the gigs in card format -->
+  <div class="max-w-3xl">
+    {{#each gigs as |gig|}}
+      <div class="card mb-4 p-4 shadow-lg rounded-lg bg-gray-100 w-full">
+        <div class="card-header mb-2">
+          <h2 class="text-xl font-bold text-blue-600">
+            <a href="/gig/{{gig.id}}">{{gig.company}}</a>
+          </h2>
+        </div>
+        <div class="card-body">
+          <p class="mb-2">
+            <strong>Job Title:</strong> <a href="/gig/{{gig.id}}" class="text-blue-600">{{gig.title}}</a>
+          </p>
+          <p class="mb-2">
+            <strong>Technologies:</strong> {{gig.technologies}}
+          </p>
+          <p class="mb-2">
+            <strong>Salary:</strong> {{gig.budget}}
+          </p>
+        </div>
+      </div>
+    {{/each}}
+  </div>
 </div>
