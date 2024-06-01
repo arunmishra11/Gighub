@@ -17,18 +17,20 @@ const hbs = exphbs.create(); // Set up handbars engine, passing in the helpers f
 
 // Define a session configuration object named 'sess'
 const sess = {
-    secret: 'Secret',
+    secret: process.env.SESSION_SECRET || 'default_secret',
     cookie: {
         maxAge: 60 * 60 * 1000,
         httpOnly: true,
-        secure: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'strict',
     },
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
         db: sequelize,
-    })
+    }),
 };
+
 app.use(session(sess)); // Use the session middleware with the configuration set to sess. This sets up session management for the express application.
 
 app.engine('handlebars', hbs.engine); // Creates handlebars template engine to use
@@ -37,6 +39,7 @@ app.set('view engine', 'handlebars'); // Sets handlebars template engine
 app.use(express.json()); // Middleware to parse JSON data in the request body
 app.use(express.urlencoded({ extended: true })) // Middleware to parse URL-encoded data in the request body, extended: true allows for rich(?) objeects and arrays to be encoded into the URL-encoded format
 app.use(express.static(path.join(__dirname, 'public'))); //Middleware to serve static files from the 'public' directory
+
 app.use(routes); // Set the routes object for various endpoints in the application
 
 
@@ -44,5 +47,5 @@ app.use(routes); // Set the routes object for various endpoints in the applicati
 // Sync the sequelize models with the database
 // force: false ensures that existing tables are not dropped and recreated, preserving data
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () =>  console.log(`Server listening on: http://localhost: ${PORT}`)) // Start the server and listen on specified port
-})
+    app.listen(PORT, () =>  console.log(`Server listening on: http://localhost: ${PORT}`)); // Start the server and listen on specified port
+});
