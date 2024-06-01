@@ -15,10 +15,10 @@ Gig.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+    // title: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
     technologies: {
       type: DataTypes.STRING,
       allowNull: true,
