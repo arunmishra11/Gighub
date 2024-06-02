@@ -15,8 +15,9 @@ router.post("/gigRepo", async (req, res) => {
 router.post("/gigPost", async (req, res) => {
   try {
     const gig = await Gig.create({
-      // title: req.body.title,
+     
       company: req.body.company,
+      title: req.body.title,
       technologies: req.body.technologies,
       budget: req.body.budget,
       contact_email: req.body.contact_email,
