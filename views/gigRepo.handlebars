@@ -1,9 +1,9 @@
 <!-- Add a background color to the entire page -->
-<div class="min-h-screen bg-gray-700 flex items-center justify-center p-8">
+<div class="min-h-screen bg-blue-200 flex items-center justify-center p-8">
   <!-- Render the gigs in card format -->
   <div class="max-w-3xl">
     {{#each gigs as |gig|}}
-      <div class="card mb-4 p-4 shadow-lg rounded-lg bg-gray-100 w-full">
+      <div class="card mb-4 p-4 shadow-lg rounded-lg bg-blue-100 w-full">
         <div class="card-header mb-2">
           <h2 class="text-xl font-bold text-blue-600">
             <a href="/gig/{{gig.id}}">{{gig.company}}</a>

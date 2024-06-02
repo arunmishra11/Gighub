@@ -1,57 +1,61 @@
+<!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GigHub</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Give+You+Glory&family=La+Belle+Aurore&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Train+One&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GigHub</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Give+You+Glory&family=La+Belle+Aurore&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Train+One&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap"
+    rel="stylesheet"
+  />
+</head>
 
-  </head>
-  <body>
-    <div class="navbar bg-blue-100 py-2 mb-14 border-4 z-[999]">
-      <div class="flex-1">
-        <a href="/" class="btn btn-ghost text-xl">GigHub</a>
-      </div>
-      <div class="flex-none">
-        <ul class="menu menu-horizontal px-1">
-          <li><a href="/gigRepo">View Gigs</a></li>
-          <li><a href="/gigPost">Post Gigs</a></li>
-          <li><a href="/loginSignup">Sign Up</a></li>
-        </ul>
-      </div>
-    </div>
-    {{{body}}}
+<body>
+ <div class="navbar bg-blue-500 h-32 mb-14 border-4 z-[999] flex items-center justify-between w-full">
 
-    <!-- Render script for logged in users only -->
-    {{#if logged_in}}
-      <script src="/js/logout.js"></script>
-    {{/if}}
-  </body>
-  <footer class="footer p-10 bg-blue-100 text-dark-grey">
+    <a href="/" class="btn btn-ghost text-xl text-white text-lg">GigHub</a>
+    <ul class="menu menu-horizontal px-1">
+      <li><a href="/gigRepo" class="text-white text-lg">View Gigs</a></li>
+      <li><a href="/gigPost" class="text-white text-lg">Post Gigs</a></li>
+      <li><a href="/loginSignup" class="text-white text-lg">Sign Up</a></li>
+    </ul>
+  </div>
+  {{{body}}}
+
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+
+<footer class="footer p-10 bg-blue-500 h-24 text-black flex justify-between items-center fixed bottom-0 left-0 w-full">
   <aside class="flex items-center">
-    <img src="/img/Gig-Hub-Logo-2.png" alt="GigHub Logo" class="w-13 h-12 mr-4" />
+    <img src="/img/Gig-Hub-Logo-2.png" alt="GigHub Logo" class="w-13 h-12 mr-4 ml-2" />
     <div>
       <h6 class="text-lg font-semibold">GigHub</h6>
       <p>Connecting talent with opportunities</p>
     </div>
-  </aside> 
-  <nav class="flex flex-col items-start md:items-center md:flex-row md:justify-between md:w-full">
-    <div>
-      <h6 class="footer-title text-lg font-semibold mb-2">GitHub</h6>
-      <div class="grid grid-flow-col gap-4">
-   
-        <a href="https://github.com/arunmishra11/Gighub.git" aria-label="GitHub">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.087-.744.083-.729.083-.729 1.205.085 1.838 1.236 1.838 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.76-1.605-2.665-.305-5.466-1.334-5.466-5.932 0-1.31.467-2.381 1.235-3.221-.123-.304-.535-1.527.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.984-.398 3.005-.403 1.021.005 2.048.137 3.006.403 2.29-1.553 3.297-1.23 3.297-1.23.653 1.649.241 2.872.118 3.176.77.84 1.233 1.911 1.233 3.221 0 4.61-2.803 5.625-5.475 5.922.43.372.813 1.103.813 2.222 0 1.606-.015 2.896-.015 3.286 0 .322.218.694.825.576 4.765-1.586 8.2-6.083 8.2-11.385 0-6.627-5.373-12-12-12z"></path></svg>
-        </a>
+  </aside>
+  <div class="flex items-center mr-2">
+    <h6 class="footer-title text-lg font-semibold mb-2 mr-4 text-black">GitHub</h6>
+    <div class="grid grid-flow-col gap-4">
+      <a href="https://github.com/arunmishra11/Gighub.git" aria-label="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
+          <path
+            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.087-.744.083-.729.083-.729 1.205.085 1.838 1.236 1.838 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.76-1.605-2.665-.305-5.466-1.334-5.466-5.932 0-1.31.467-2.381 1.235-3.221-.123-.304-.535-1.527.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.984-.398 3.005-.403 1.021.005 2.048.137 3.006.403 2.29-1.553 3.297-1.23 3.297-1.23.653 1.649.241 2.872.118 3.176.77.84">
+          </path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
 
 </html>
