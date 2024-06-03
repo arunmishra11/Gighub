@@ -1,48 +1,47 @@
 [
-    {
-      "user_id": "1",
-      "company": "BlueOcean Digital",
-      "title": "API Developer",
-      "technologies": "JavaScript, Node, Express.js, REST, Insomnia, SQL, ",
-      "description": "BlueOcean Digital, a leading web development company, is dedicated to delivering innovative solutions and seemless APIs to our customers. We are looking for an experienced API Developer to join our dynamic and growing team. The ideal candidate will design, develop, and maintain robust and scalable APIs, ensuring their performance, quality, and responsiveness. Responsibilities include collaborating with front-end developers, writing clean and efficient code, implementing automated tests, optimizing API performance, troubleshooting issues, staying updated with emerging trends, participating in code reviews, and documenting API processes. If you are enthusiastic about developing high-performance APIs in a collaborative environment, we would love to hear from you.",
-      "budget": "100,000",
-      "contact_email": "ex@example.com"
-    },
-    {
-        "user_id": "2",
-        "company": "Quantum Webcraft",
-        "title": "Database Developer",
-        "technologies": "MongoDB, AWS, Docker",
-        "description": "This is a test.",
-        "budget": "1,000",
-        "contact_email": "ex@example.com"
-    },
-    {
-        "user_id": "3",
-        "company": "SEO Solutions",
-        "title": "SEO Specialist",
-        "technologies": "HTML, CSS, JavaScript, SQL, RegEx, Google Analytics",
-        "description": "This is a description",
-        "budget": "1,000",
-        "contact_email": "ex@example.com"
-    },
-    {
-        "user_id": "4",
-        "company": "AlphaCrypt ",
-        "title": "Web Security Specialist",
-        "technologies": "Python, AWS WAF, Cryptography, Cloud Security",
-        "description": "This is a test.",
-        "budget": "1,000",
-        "contact_email": "ex@example.com"
-    },
-    {
-        "user_id": "5",
-        "company": "PixelPerfect",
-        "title": "UI Developer",
-        "technologies": "HTML, CSS, JavaScript, React, Bootstrap",
-        "description": "This is a description",
-        "budget": "1,000",
-        "contact_email": "ex@example.com"
-    }
-  ]
-  
+  {
+    "user_id": "1",
+    "company": "BlueOcean Digital",
+    "title": "API Developer",
+    "technologies": "JavaScript, Node, Express.js, REST, Insomnia, SQL, ",
+    "description": "BlueOcean Digital, a leading web development company, is dedicated to delivering innovative solutions and seemless APIs to our customers. We are looking for an experienced API Developer to join our dynamic and growing team. The ideal candidate will design, develop, and maintain robust and scalable APIs, ensuring their performance, quality, and responsiveness. Responsibilities include collaborating with front-end developers, writing clean and efficient code, implementing automated tests, optimizing API performance, troubleshooting issues, staying updated with emerging trends, participating in code reviews, and documenting API processes. If you are enthusiastic about developing high-performance APIs in a collaborative environment, we would love to hear from you.",
+    "budget": "$90,000- $120,000 per year (depending on experience and qualifications)",
+    "contact_email": "support@blueoceandigital.com"
+  },
+  {
+    "user_id": "2",
+    "company": "Quantum Webcraft",
+    "title": "Database Developer",
+    "technologies": "MongoDB, AWS, Docker",
+    "description": "Quantum Webcraft, a cutting-edge technology firm, is seeking a skilled Database Developer to join our dynamic team. The ideal candidate will be responsible for designing, implementing, and maintaining database solutions that meet our organizational needs. Key responsibilities include database design, optimization, troubleshooting, and ensuring data security and integrity. The Database Developer will collaborate with cross-functional teams to develop and deploy database solutions that enhance our products and services.",
+    "budget": "$80,000 -$100,000 per year",
+    "contact_email": "contact@quantumwebcraft.com"
+  },
+  {
+    "user_id": "3",
+    "company": "SEO Solutions",
+    "title": "SEO Specialist",
+    "technologies": "HTML, CSS, JavaScript, SQL, RegEx, Google Analytics",
+    "description": "SEO Solutions, a leading provider of digital marketing services, is looking for a talented SEO Specialist to join our team. The ideal candidate will have a deep understanding of search engine optimization strategies and techniques, including on-page and off-page optimization, keyword research, and content optimization. Responsibilities include developing and implementing SEO campaigns, analyzing website traffic and performance, and staying up-to-date with the latest trends and best practices in SEO. The SEO Specialist will work closely with the marketing team to drive organic traffic and improve search engine rankings for our clients.",
+    "budget": "$50,000 -$75,000 per year",
+    "contact_email": "info@seosolutions.com"
+  },
+  {
+    "user_id": "4",
+    "company": "AlphaCrypt ",
+    "title": "Web Security Specialist",
+    "technologies": "Python, AWS WAF, Cryptography, Cloud Security",
+    "description": "AlphaCrypt cybersecurity firm, is seeking a skilled Web Security Specialist to join our team. The ideal candidate will have expertise in web security technologies, including Python programming, AWS WAF (Web Application Firewall), cryptography, and cloud security practices. Responsibilities include analyzing and identifying security vulnerabilities in web applications, implementing security measures to protect against cyber threats, and ensuring compliance with security standards and regulations. The Web Security Specialist will collaborate with cross-functional teams to enhance the security posture of our web applications and infrastructure.",
+    "budget": "$80,000 - $120,000 per year (depending on experience and qualifications)",
+    "contact_email": "security@alphacrypt.com"
+  },
+  {
+    "user_id": "5",
+    "company": "PixelPerfect",
+    "title": "UI Developer",
+    "technologies": "HTML, CSS, JavaScript, React, Bootstrap",
+    "description": "PixelPerfect is a design and development agency seeking a talented UI Developer to join our team. The ideal candidate will have a strong background in front-end development, with expertise in HTML, CSS, JavaScript, React, and Bootstrap. Responsibilities include translating design mockups into interactive and responsive web interfaces, collaborating with designers and developers to implement UI/UX improvements, and ensuring the technical feasibility of UI/UX designs. The UI Developer will play a key role in creating visually appealing and user-friendly interfaces for our clients' websites and applications.",
+    "budget": "$60,000 - $90,000 per year",
+    "contact_email": "careers@pixelperfect.com"
+  }
+]
