@@ -12,6 +12,12 @@ body:JSON.stringify({
 headers:{'Content-Type':'application/json'}
 })
 console.log(response)
+if (response.ok){
+     window.location.replace('/gigpost')
+}
+else {
+    alert("Something went wrong")
 }
 loginbtn.addEventListener("click",loginForm )
+}
 
