@@ -1,72 +1,131 @@
-
-<div class="hero">
-  <div class="hero-content flex-col lg:flex-row mb-10">
+<div class="hero flex flex-col lg:flex-row mb-10 items-center bg-blue-200">
+  <div class="hero-content">
+    <img
+      class="h-auto max-w-lg rounded-lg object-scale-down m-4"
+      src="/img/Gig-Hub-Logo-2.png"
+      alt="Gig Hub Logo"
+    />
     <div class="text-center lg:text-left text-lg">
-     <img class="h-auto max-w-lg rounded-lg object-scale-down m-4" src="{{publicPath}}/img/Gig-Hub-Logo-2.png" alt="Gig Hub Logo">
-      <p class="py-6">Welcome to GigHub, where your next career opportunity awaits! </p>
-      <p>Whether you are an employer seeking the ideal candidate or a job seeker ready to advance your career, our platform provides the tools and resources to support your journey.</p>
+      <p class="py-6">Welcome to GigHub, where your next career opportunity
+        awaits!</p>
+      <p>Whether you are an employer seeking the ideal candidate or a job seeker
+        ready to advance your career, our platform provides the tools and
+        resources to support your journey.</p>
     </div>
+  </div>
 
+  <div class="flex-grow"></div>
 
-
-
-<div class="card w-full max-w-sm shadow-2xl bg-base-100 border-4">
-      <form class="card-body">
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text">Email</span>
-          </label>
-          <input type="email" placeholder="email" class="input input-bordered" required />
-        </div>
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text">Password</span>
-          </label>
-          <input type="password" placeholder="password" class="input input-bordered" required />
-          <label class="label">
-            <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
-          </label>
-        </div>
-        <div class="form-control mt-1">
-          <button class="btn btn-blue-100">Login</button>
-        </div>
-      </form>
-    </div>
+  <div
+    class="card w-full max-w-sm shadow-2xl bg-base-100 border-4 mr-10 bg-blue-200"
+  >
+    <form class="card-body">
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text">Email</span>
+        </label>
+        <input
+          type="email"
+          placeholder="email"
+          class="input input-bordered"
+          required
+        />
+      </div>
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text">Password</span>
+        </label>
+        <input
+          type="password"
+          placeholder="password"
+          class="input input-bordered"
+          required
+        />
+        <label class="label">
+          <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+        </label>
+      </div>
+      <div class="form-control mt-1">
+        <button class="btn btn-blue-100">Login</button>
+      </div>
+    </form>
   </div>
 </div>
 
+<div
+  class="carousel rounded-box m-8 border-4 bg-blue-200 flex flex-wrap justify-center gap-8 p-8 mb-8"
+>
+  <!-- Added mb-8 for margin-bottom -->
+  {{#each (limit gigs 3)}}
+    <div
+      class="carousel-item flex items-center justify-center transition-transform duration-500 transform hover:-translate-y-1 mb-4"
+    >
+      <!-- Added mb-4 for margin-bottom -->
+      <div class="card w-full max-w-sm shadow-2xl bg-blue-100 border-4 p-4">
+        <!-- Removed fixed height -->
+        <div class="card-body">
+          <h2 class="card-title">{{title}}</h2>
+          <p><strong>Company:</strong> {{company}}</p>
+          <p><strong>Technologies:</strong> {{technologies}}</p>
+          {{!-- <p><strong>Description:</strong> {{description}}</p> --}}
+          <p><strong>Budget:</strong> {{budget}}</p>
+          <p><strong>Description:</strong> Log in to see more! </p>
+          {{!-- <p><strong>Contact Email:</strong> {{contact_email}}</p> --}}
+          <p><strong>Contact Email:</strong> Log in to contact employers! </p>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
 
-
-
+{{! 
 <div class="carousel rounded-box m-8 border-4">
   <div class="carousel-item">
-    <img src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg" alt="Burger" />
-  </div> 
-  <div class="carousel-item">
-    <img src="https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.jpg" alt="Burger" />
-  </div> 
-  <div class="carousel-item">
-    <img src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg" alt="Burger" />
-  </div> 
-  <div class="carousel-item">
-    <img src="https://img.daisyui.com/images/stock/photo-1494253109108-2e30c049369b.jpg" alt="Burger" />
-  </div> 
-  <div class="carousel-item">
-    <img src="https://img.daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.jpg" alt="Burger" />
-  </div> 
-  <div class="carousel-item">
-    <img src="https://img.daisyui.com/images/stock/photo-1559181567-c3190ca9959b.jpg" alt="Burger" />
-  </div> 
-  <div class="carousel-item">
-    <img src="https://img.daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.jpg" alt="Burger" />
+    <img
+      src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.jpg"
+      alt="Burger"
+    />
   </div>
-</div>
+  <div class="carousel-item">
+    <img
+      src="https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.jpg"
+      alt="Burger"
+    />
+  </div>
+  <div class="carousel-item">
+    <img
+      src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.jpg"
+      alt="Burger"
+    />
+  </div>
+  <div class="carousel-item">
+    <img
+      src="https://img.daisyui.com/images/stock/photo-1494253109108-2e30c049369b.jpg"
+      alt="Burger"
+    />
+  </div>
+  <div class="carousel-item">
+    <img
+      src="https://img.daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.jpg"
+      alt="Burger"
+    />
+  </div>
+  <div class="carousel-item">
+    <img
+      src="https://img.daisyui.com/images/stock/photo-1559181567-c3190ca9959b.jpg"
+      alt="Burger"
+    />
+  </div>
+  <div class="carousel-item">
+    <img
+      src="https://img.daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.jpg"
+      alt="Burger"
+    />
+  </div>
+</div> }}
 
-
-
-
-{{!-- Border --}}
-    {{!-- <div class="carousel carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box">
+{{! Border }}
+{{!-- <div class="carousel carousel-center max-w-md p-4 space-x-4 bg-neutral rounded-box">
   <div class="carousel-item">
     <div class="card-container">
       <div class="card">
@@ -96,11 +155,10 @@
   </div>
 </div> --}}
 
-
-{{!-- 
+{{! 
 
 <div class="flex flex-col w-full lg:flex-row">
   <div class="grid flex-grow h-32 card bg-base-300 rounded-box place-items-center">content</div> 
   <div class="divider lg:divider-horizontal">OR</div> 
   <div class="grid flex-grow h-32 card bg-base-300 rounded-box place-items-center">content</div>
-</div> --}}
+</div> }}
