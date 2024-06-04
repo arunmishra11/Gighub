@@ -34,6 +34,8 @@ Introducing GigHub, a modern and intuitive job board web application designed sp
 
 ## Technologies Used
 
+- CSS
+- JavaScript
 - Express.js
 - Node.js
 - HTML
@@ -54,7 +56,8 @@ To run this application locally, follow these steps:
 - Then start the server by running `npm run dev`.
 - Open your browser and go to http://localhost:3001 to view the application.
 
-
+To run this application on render:
+- [GigHub](https://gighub-2.onrender.com/)
 
 
 ## Usage
