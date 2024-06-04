@@ -1,7 +1,7 @@
 const signupForm = document.querySelector("#signupForm");
 
 
-//function to add new user information
+// Function to add new user information
 
 const signupFunction = async function (event) {
   event.preventDefault();
@@ -14,7 +14,6 @@ const signupFunction = async function (event) {
 
   if (firstName && lastName && email && password) {
     const name = firstName + " " + lastName;
-    console.log(name);
     // fetch
     const res = await fetch("/api/users/",{
         method: 'POST',
