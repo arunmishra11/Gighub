@@ -26,6 +26,7 @@ router.post('/login', async (req, res) => {
  try {
     const userData = await User.findOne({ where: { email: req.body.email } });
 
+    console.log("User Data: ", userData)
 
     if (!userData) {
       res
@@ -37,7 +38,7 @@ router.post('/login', async (req, res) => {
  
     const validPassword = await userData.checkPassword(req.body.password);
  
- 
+    console.log('Is valid: ', validPassword)
     if (!validPassword) {
       res
         .status(400)
@@ -49,7 +50,7 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-     
+      console.log("Session Created: ", req.session);
       res.json({ user: userData, message: 'You are now logged in!' });
     });
  
@@ -64,6 +65,7 @@ router.post('/login', async (req, res) => {
  router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
+      console.log("User logged out")
       res.status(204).end();
     });
   } else {
