@@ -15,12 +15,21 @@ const signupFunction = async function (event) {
   if (firstName && lastName && email && password) {
     const name = firstName + " " + lastName;
     console.log(name);
-    //fetch
-    const res = await fetch("/api/users/ ",{
+    // fetch
+    const res = await fetch("/api/users/",{
         method: 'POST',
-        body:
-        Headers:
+        body: JSON.stringify({
+          name,email,password
+        }),
+        headers: {"Content-Type":"application/json"}
     } )
+    if (res.ok) {
+      window.location.replace("/");
+    } else {
+      alert("Something went wrong");
+      console.log(res.statusText);
+    }
+  
   }
 };
 
