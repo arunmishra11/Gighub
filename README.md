@@ -1,4 +1,4 @@
-# Gighub
+# GigHub
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 
@@ -26,7 +26,7 @@ Introducing GigHub, a modern and intuitive job board web application designed sp
 
 - Create and view Gig postings.
 - Contact potential employers or employees.
-- User-friendly interface for seamless note-taking experience.
+- User-friendly interface for seamless experience.
 - Simple and responsive design.
 
 
