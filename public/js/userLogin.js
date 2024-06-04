@@ -13,9 +13,10 @@ async function loginForm(e) {
     headers: { "Content-Type": "application/json" },
   });
   console.log(response);
-  window.location.replace("/gigpost");
+ // window.location.replace("/gigpost");
   if (response.ok) {
-    window.location.replace("/");
+    window.location.replace("/gigPost");
+   // window.location.replace("/test");
   } else {
     alert("Something went wrong");
     console.log(response.statusText);
