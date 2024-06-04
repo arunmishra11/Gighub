@@ -13,7 +13,14 @@ dotenv.config();
 const app = express(); // Set up express application
 const PORT = process.env.PORT || 3001; // Define the port the server will listen on
 
-const hbs = exphbs.create(); // Set up handbars engine, passing in the helpers function
+const hbs = exphbs.create( {
+  helpers: {
+  limit: function (arr, limit) {
+    if (!Array.isArray(arr)) { return []; }
+    return arr.slice(0, limit);
+  }
+}
+}); // Set up handbars engine, passing in the helpers function
 
 // Define a session configuration object named 'sess'
 const sess = {
