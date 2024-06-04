@@ -1,28 +1,38 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const loginForm = document.getElementById("loginForm");
+const signupForm = document.querySelector("#signupForm");
 
-  async function loginFormHandler(e) {
-    e.preventDefault();
 
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+//function to add new user information
 
-    const response = await fetch("/api/users/login", {
-      method: "POST",
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-      headers: { "Content-Type": "application/json" },
-    });
+const signupFunction = async function (event) {
+  event.preventDefault();
+  const firstName = document.querySelector("#firstName").value.trim();
+  const lastName = document.querySelector("#lastName").value.trim();
+  const email = document.querySelector("#email").value.trim();
+  const password = document.querySelector("#password").value.trim();
 
-    if (response.ok) {
-      window.location.replace("/gigPost");
+  console.log(firstName, lastName, email, password);
+
+  if (firstName && lastName && email && password) {
+    const name = firstName + " " + lastName;
+    console.log(name);
+    // fetch
+    const res = await fetch("/api/users/",{
+        method: 'POST',
+        body: JSON.stringify({
+          name,email,password
+        }),
+        headers: {"Content-Type":"application/json"}
+    } )
+    if (res.ok) {
+      window.location.replace("/");
     } else {
       alert("Something went wrong");
-      console.log(response.statusText);
+      console.log(res.statusText);
     }
+  
   }
+};
 
-  loginForm.addEventListener("submit", loginFormHandler);
-});
+
+
+signupForm.addEventListener("submit", signupFunction);
