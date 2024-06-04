@@ -6,14 +6,19 @@
       alt="Gig Hub Logo"
     />
     <div class="text-center lg:text-left text-lg">
-      <p class="py-6">Welcome to GigHub, where your next career opportunity awaits!</p>
-      <p>Whether you are an employer seeking the ideal candidate or a job seeker ready to advance your career, our platform provides the tools and resources to support your journey.</p>
+      <p class="py-6">Welcome to GigHub, where your next career opportunity
+        awaits!</p>
+      <p>Whether you are an employer seeking the ideal candidate or a job seeker
+        ready to advance your career, our platform provides the tools and
+        resources to support your journey.</p>
     </div>
   </div>
 
   <div class="flex-grow"></div>
 
-  <div class="card w-full max-w-sm shadow-2xl bg-base-100 border-4 mr-10 bg-blue-200">
+  <div
+    class="card w-full max-w-sm shadow-2xl bg-base-100 border-4 mr-10 bg-blue-200"
+  >
     <form class="card-body">
       <div class="form-control">
         <label class="label">
@@ -47,10 +52,17 @@
   </div>
 </div>
 
-<div class="carousel rounded-box m-8 border-4 bg-blue-200 flex flex-wrap justify-center gap-8 p-8 mb-8"> <!-- Added mb-8 for margin-bottom -->
-  {{#each gigs}}
-    <div class="carousel-item flex items-center justify-center transition-transform duration-500 transform hover:-translate-y-1 mb-4"> <!-- Added mb-4 for margin-bottom -->
-      <div class="card w-full max-w-sm shadow-2xl bg-blue-100 border-4 p-4"> <!-- Removed fixed height -->
+<div
+  class="carousel rounded-box m-8 border-4 bg-blue-200 flex flex-wrap justify-center gap-8 p-8 mb-8"
+>
+  <!-- Added mb-8 for margin-bottom -->
+  {{#each (limit gigs 3)}}
+    <div
+      class="carousel-item flex items-center justify-center transition-transform duration-500 transform hover:-translate-y-1 mb-4"
+    >
+      <!-- Added mb-4 for margin-bottom -->
+      <div class="card w-full max-w-sm shadow-2xl bg-blue-100 border-4 p-4">
+        <!-- Removed fixed height -->
         <div class="card-body">
           <h2 class="card-title">{{title}}</h2>
           <p><strong>Company:</strong> {{company}}</p>
@@ -65,18 +77,6 @@
     </div>
   {{/each}}
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 {{! 
 <div class="carousel rounded-box m-8 border-4">
