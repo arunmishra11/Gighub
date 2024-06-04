@@ -7,7 +7,11 @@ exports.signup = async (req, res) => {
     // const hashedPassword = await bcrypt.hash(password, 10);
     // const user = await db.User.create({ username, email, password: hashedPassword });
     // req.session.userId = user.id;
-    res.status(201).redirect('/dashboard');
+    req.session.save(() => {
+      req.session.user_id = user.id;
+      req.session.logged_in = true;
+      res.status(201).redirect('/dashboard');
+    });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
