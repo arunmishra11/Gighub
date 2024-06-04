@@ -15,7 +15,7 @@ async function loginForm(e) {
   console.log(response);
   window.location.replace("/gigpost");
   if (response.ok) {
-    window.location.replace("/gigpost");
+    window.location.replace("/");
   } else {
     alert("Something went wrong");
     console.log(response.statusText);
