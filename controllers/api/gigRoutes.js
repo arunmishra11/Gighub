@@ -21,8 +21,8 @@ router.post("/gigPost", async (req, res) => {
       budget: req.body.budget,
       contact_email: req.body.contact_email,
       description: req.body.description,
-      // user_id: req.session.user_id,
-      user_id: 1,
+      user_id: req.session.user_id,
+      //user_id: 1,
     });
     // Send a success response with redirection URL
     res.status(200).json({ success: true, redirectUrl: "/gigRepo" });
