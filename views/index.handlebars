@@ -20,12 +20,12 @@
   <div
     class="card w-full max-w-sm shadow-2xl bg-base-100 border-4 mr-10 bg-blue-200"
   >
-    <form class="card-body">
+    <form  id="loginForm" class="card-body">
       <div class="form-control">
         <label class="label">
           <span class="label-text">Email</span>
         </label>
-        <input
+        <input id="email"
           type="email"
           placeholder="email"
           class="input input-bordered"
@@ -36,7 +36,7 @@
         <label class="label">
           <span class="label-text">Password</span>
         </label>
-        <input
+        <input id="password"
           type="password"
           placeholder="password"
           class="input input-bordered"
@@ -78,4 +78,5 @@
     </div>
   {{/each}}
 </div>
+<script src="/js/userSignup.js"></script>
 
