@@ -1,5 +1,8 @@
 const signupForm = document.querySelector("#signupForm");
 
+
+//function to add new user information
+
 const signupFunction = async function (event) {
   event.preventDefault();
   const firstName = document.querySelector("#firstName").value.trim();
@@ -20,5 +23,7 @@ const signupFunction = async function (event) {
     } )
   }
 };
+
+
 
 signupForm.addEventListener("submit", signupFunction);
