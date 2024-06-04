@@ -28,7 +28,8 @@ const sess = {
   cookie: {
     maxAge: 60 * 60 * 1000,
     httpOnly: true,
-    secure: true,
+    secure: false,
+    sameSite: 'strict'
   },
   resave: false,
   saveUninitialized: true,
@@ -36,6 +37,7 @@ const sess = {
     db: sequelize,
   }),
 };
+
 app.use(session(sess)); // Use the session middleware with the configuration set to sess. This sets up session management for the express application.
 
 app.engine("handlebars", hbs.engine); // Creates handlebars template engine to use
