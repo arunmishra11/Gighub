@@ -14,3 +14,7 @@ const submitGig = async (event) => {
 }
 
 form.addEventListener('submit', submitGig);
+
+
+
+  
