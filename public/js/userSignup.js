@@ -1,38 +1,61 @@
-const signupForm = document.querySelector("#signupForm");
+document.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.getElementById("loginForm");
+  const signupForm = document.getElementById("signupForm");
 
+  async function loginFormHandler(e) {
+    e.preventDefault();
 
-//function to add new user information
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-const signupFunction = async function (event) {
-  event.preventDefault();
-  const firstName = document.querySelector("#firstName").value.trim();
-  const lastName = document.querySelector("#lastName").value.trim();
-  const email = document.querySelector("#email").value.trim();
-  const password = document.querySelector("#password").value.trim();
+    const response = await fetch("/api/users/login", {
+      method: "POST",
+      body: JSON.stringify({ email, password }),
+      headers: { "Content-Type": "application/json" },
+    });
 
-  console.log(firstName, lastName, email, password);
-
-  if (firstName && lastName && email && password) {
-    const name = firstName + " " + lastName;
-    console.log(name);
-    // fetch
-    const res = await fetch("/api/users/",{
-        method: 'POST',
-        body: JSON.stringify({
-          name,email,password
-        }),
-        headers: {"Content-Type":"application/json"}
-    } )
-    if (res.ok) {
-      window.location.replace("/");
+    if (response.ok) {
+      window.location.replace("/gigPost");
     } else {
       alert("Something went wrong");
-      console.log(res.statusText);
+      console.log(response.statusText);
     }
-  
   }
-};
 
+  async function signupFormHandler(e) {
+    e.preventDefault();
+    
+    const firstName = document.querySelector("#firstName").value.trim();
+    const lastName = document.querySelector("#lastName").value.trim();
+    const email = document.querySelector("#email").value.trim();
+    const password = document.querySelector("#password").value.trim();
 
+    console.log(firstName, lastName, email, password);
 
-signupForm.addEventListener("submit", signupFunction);
+    if (firstName && lastName && email && password) {
+      const name = `${firstName} ${lastName}`;
+      console.log(name);
+      
+      const response = await fetch("/api/users/", {
+        method: 'POST',
+        body: JSON.stringify({ name, email, password }),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      if (response.ok) {
+        window.location.replace("/");
+      } else {
+        alert("Something went wrong");
+        console.log(response.statusText);
+      }
+    }
+  }
+
+  if (loginForm) {
+    loginForm.addEventListener("submit", loginFormHandler);
+  }
+
+  if (signupForm) {
+    signupForm.addEventListener("submit", signupFormHandler);
+  }
+});
